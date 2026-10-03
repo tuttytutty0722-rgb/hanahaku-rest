@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="横浜の花博を楽しみにする人の、非公式・予約休憩所。おみくじと小さな花壇でひと息。">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>花博の予約休憩所｜非公式</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#202020;font-family:system-ui,-apple-system,"Meiryo",sans-serif;font-size:1rem;line-height:1.8}main{max-width:760px;margin:0 auto;padding:24px 22px 40px}a{color:#0000c8;text-underline-offset:3px}a:visited{color:#551a8b}header{border-top:5px solid #205738;border-bottom:1px solid #aaa;padding:20px 0 24px}.eyebrow{margin:0;color:#205738;font-weight:700;letter-spacing:.08em;font-size:.875rem}h1{font-family:serif;font-size:clamp(2rem,7vw,3rem);line-height:1.35;margin:12px 0 16px}p{margin:10px 0}.notice{display:inline-block;border:1px solid #666;padding:1px 8px;font-size:.875rem}nav{margin:18px 0}nav a{display:inline-block;margin:0 22px 5px 0}section{padding:26px 0;border-bottom:1px solid #bbb}h2{font-family:serif;font-size:1.5rem;line-height:1.5;margin:0 0 12px}.number{color:#205738;font-family:monospace;font-size:1rem;margin-right:12px}button{font:inherit;color:#111;background:#eee;border:2px outset #ccc;border-radius:0;padding:9px 20px;cursor:pointer;min-height:44px}button:hover{background:#e2ebdf}button:active{border-style:inset}button:focus-visible,a:focus-visible{outline:3px solid #225ec9;outline-offset:4px}.result{margin-top:16px;min-height:90px;border-left:3px solid #205738;padding:4px 0 4px 16px}.result strong{font-size:1.25rem}.small{font-size:.875rem;color:#505050}.garden{min-height:80px;padding:12px;background:#f2f7ef;border-bottom:3px solid #205738;font-size:1.65rem;letter-spacing:.2em;overflow-wrap:anywhere}.links{padding-left:1.3em}.links li{margin:8px 0}footer{padding-top:24px;font-size:.875rem;color:#505050}footer p{margin:6px 0}@media(max-width:420px){main{padding:16px}nav a{margin-right:15px}}@media(prefers-reduced-motion:no-preference){button{transition:background .12s}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="eyebrow">GREEN×EXPO 2027 を楽しみにしている人へ</p>
+<h1>花博の予約休憩所</h1>
+<span class="notice">非公式・ジョークサイト</span>
+<p>予約画面とにらめっこしたら、ここでひと休み。<br>このページには、いつでも空席があります。</p>
+</header>
+<nav aria-label="ページ内案内"><a href="#fortune">予約おみくじ</a><a href="#garden">ひと息の花壇</a><a href="#official">公式のご案内</a></nav>
+<section id="fortune">
+<h2><span class="number">01</span>予約おみくじ</h2>
+<p>予約の行方はわかりませんが、今日のひとことは出せます。</p>
+<button id="draw" type="button">おみくじを引く</button>
+<div class="result" id="fortune-result" role="status" aria-live="polite"><strong>お席、空いてます。</strong><p>まずは肩の力を抜いてどうぞ。</p></div>
+<p class="small">おみくじはジョークです。実際の予約状況や当選確率とは関係ありません。</p>
+</section>
+<section id="garden">
+<h2><span class="number">02</span>ひと息の花壇</h2>
+<p>取れなかった日も、まだ予約を待つ日も。ここでは花をひとつ。</p>
+<button id="plant" type="button">ひと息ついて、花を咲かせる</button>
+<p id="garden-status" role="status" aria-live="polite">本日のあなたの花壇：0輪</p>
+<div class="garden" id="flowers" aria-hidden="true">· · · · · · · · · · · ·</div>
+<p class="small">花壇はこの画面の中だけ。ページを閉じたり読み込み直したりすると、まっさらになります。</p>
+</section>
+<section id="official">
+<h2><span class="number">03</span>そろそろ、公式へ</h2>
+<p>ひと休みしたら、最新のお知らせは公式サイトで。</p>
+<ul class="links"><li><a href="https://expo2027yokohama.or.jp/" rel="noreferrer">GREEN×EXPO 2027 公式サイト</a></li></ul>
+<p class="small">このサイトでは予約受付・空席確認はできません。開催情報、チケット、予約方法は公式の案内をご確認ください。</p>
+</section>
+<footer>
+<p>花博の予約休憩所 ／ 横浜の花博を楽しみにする、非公式の小さな遊び場。</p>
+<p>主催者・公式予約サービスとは関係ありません。</p>
+<p>ログイン・入力フォーム・広告・アクセス解析・Cookieはありません。遊びの内容を外部へ送信することもありません。</p>
+</footer>
+<noscript><p>JavaScriptが無効のため、おみくじと花壇はお休み中です。公式サイトへのリンクは使えます。</p></noscript>
+</main>
+<script>
+'use strict';
+const fortunes=[
+['大吉','予約のことはいったん置いて。お茶がちょうど飲みごろです。'],
+['花吉','空席は見つからなくても、道ばたの花は見つかるでしょう。'],
+['休吉','再読み込みより、深呼吸。肩を下げると運気もひと休み。'],
+['芽吉','今日はまだ芽。楽しみは、ゆっくり育っても大丈夫。'],
+['満開','予約画面は満員でも、あなたの休日には余白があります。'],
+['横浜吉','とりあえず、脳内で崎陽軒のシウマイをひとつ。'],
+['のんびり吉','急がば、ひと息。花は更新ボタンを押さなくても咲きます。']
+];
+let lastFortune=-1;
+document.getElementById('draw').addEventListener('click',()=>{
+let next=Math.floor(Math.random()*(fortunes.length-1));if(next>=lastFortune)next++;if(lastFortune<0)next=Math.floor(Math.random()*fortunes.length);lastFortune=next;
+const result=document.getElementById('fortune-result');const title=document.createElement('strong');const detail=document.createElement('p');title.textContent=fortunes[next][0];detail.textContent=fortunes[next][1];result.replaceChildren(title,detail);
+});
+let count=0;
+const blooms=['🌷','🌼','🌸','🌻'];
+document.getElementById('plant').addEventListener('click',()=>{
+count++;const garden=document.getElementById('flowers');if(count===1)garden.textContent='';garden.append(document.createTextNode(blooms[(count-1)%blooms.length]+' '));document.getElementById('garden-status').textContent='本日のあなたの花壇：'+count+'輪'+(count===32?'。満開です。今日はここでひと休み。':'');if(count===32){document.getElementById('plant').disabled=true;document.getElementById('plant').textContent='満開になりました';}
+});
+</script>
+</body>
+</html>
