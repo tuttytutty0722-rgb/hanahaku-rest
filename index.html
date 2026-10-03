@@ -10,7 +10,7 @@
 <title>花博の予約休憩所｜非公式</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fff;color:#202020;font-family:system-ui,-apple-system,"Meiryo",sans-serif;font-size:1rem;line-height:1.8}main{max-width:760px;margin:0 auto;padding:24px 22px 40px}a{color:#0000c8;text-underline-offset:3px}a:visited{color:#551a8b}header{border-top:5px solid #205738;border-bottom:1px solid #aaa;padding:20px 0 24px}.eyebrow{margin:0;color:#205738;font-weight:700;letter-spacing:.08em;font-size:.875rem}h1{font-family:serif;font-size:clamp(2rem,7vw,3rem);line-height:1.35;margin:12px 0 16px}p{margin:10px 0}.notice{display:inline-block;border:1px solid #666;padding:1px 8px;font-size:.875rem}nav{margin:18px 0}nav a{display:inline-block;margin:0 22px 5px 0}section{padding:26px 0;border-bottom:1px solid #bbb}h2{font-family:serif;font-size:1.5rem;line-height:1.5;margin:0 0 12px}.number{color:#205738;font-family:monospace;font-size:1rem;margin-right:12px}button{font:inherit;color:#111;background:#eee;border:2px outset #ccc;border-radius:0;padding:9px 20px;cursor:pointer;min-height:44px}button:hover{background:#e2ebdf}button:active{border-style:inset}button:focus-visible,a:focus-visible{outline:3px solid #225ec9;outline-offset:4px}.result{margin-top:16px;min-height:90px;border-left:3px solid #205738;padding:4px 0 4px 16px}.result strong{font-size:1.25rem}.small{font-size:.875rem;color:#505050}.garden{min-height:80px;padding:12px;background:#f2f7ef;border-bottom:3px solid #205738;font-size:1.65rem;letter-spacing:.2em;overflow-wrap:anywhere}.links{padding-left:1.3em}.links li{margin:8px 0}footer{padding-top:24px;font-size:.875rem;color:#505050}footer p{margin:6px 0}@media(max-width:420px){main{padding:16px}nav a{margin-right:15px}}@media(prefers-reduced-motion:no-preference){button{transition:background .12s}}
-</style>
+.tool{padding:20px 0;border-top:1px dotted #aaa}.tool h3{font-size:1.125rem;line-height:1.6;margin:6px 0 10px}.tag{font-size:.875rem;font-weight:700;color:#205738}details summary{cursor:pointer;font-weight:700;min-height:44px;padding:8px 0}details p{padding-left:10px}code{overflow-wrap:anywhere}kbd{border:1px solid #aaa;padding:0 4px;font-size:.875rem}</style>
 </head>
 <body>
 <main>
@@ -20,7 +20,7 @@
 <span class="notice">非公式・ジョークサイト</span>
 <p>予約画面とにらめっこしたら、ここでひと休み。<br>このページには、いつでも空席があります。</p>
 </header>
-<nav aria-label="ページ内案内"><a href="#fortune">予約おみくじ</a><a href="#garden">ひと息の花壇</a><a href="#official">公式のご案内</a></nav>
+<nav aria-label="ページ内案内"><a href="#fortune">予約おみくじ</a><a href="#garden">ひと息の花壇</a><a href="#tools">花博の便利帳</a><a href="#official">公式のご案内</a></nav>
 <section id="fortune">
 <h2><span class="number">01</span>予約おみくじ</h2>
 <p>予約の行方はわかりませんが、今日のひとことは出せます。</p>
@@ -36,8 +36,61 @@
 <div class="garden" id="flowers" aria-hidden="true">· · · · · · · · · · · ·</div>
 <p class="small">花壇はこの画面の中だけ。ページを閉じたり読み込み直したりすると、まっさらになります。</p>
 </section>
+<section id="tools">
+<h2><span class="number">03</span>花博の便利帳</h2>
+<p>予約の見づらさを減らす工夫と、来場前に知っておきたい情報。出典をたどれるものを集めました。</p>
+<p class="small">調査日：2026年10月3日。公開資料・コードを確認した紹介です。予約画面へのログインや、非公式ツールのインストールによる実機検証は行っていません。</p>
+<article class="tool">
+<p class="tag">花博向け公開あり ／ 非公式 ／ 動作未検証</p>
+<h3>空き状況アイコンを、見慣れた図柄に</h3>
+<p><strong>GREEN×EXPO 2027 空き状況アイコン差し替え</strong>（penguindayo）。来場日時予約のアイコンを、大阪・関西万博の図柄に差し替え、40pxで表示するユーザースクリプトです。予約枠を増やしたり、予約を自動取得したりするものではありません。</p>
+<p><a href="https://pengu.info/articles/css/icon" rel="noreferrer">作者の案内</a> ／ <a href="https://github.com/penguindayo/expo2027-availability-icons" rel="noreferrer">公開コードを確認する</a></p>
+<details><summary>対応範囲と、使う前の確認</summary>
+<p>確認した版は1.0.1。対象URLは <code>https://ticket.expo2027yokohama.or.jp/*</code>。画像の差し替えと画面更新の監視が中心で、この版に外部送信・自動予約の処理は見当たりませんでした。拡張機能でスクリプトを実行する方式で、使える端末・ブラウザは導入方法によります。</p>
+<p>安全性の保証や公式の利用許可を確認したものではありません。導入時は作者の案内、拡張機能の権限、最新コード、予約サイトの利用条件を確認してください。表示がおかしければ無効に戻し、空き状況は公式の表示で確認しましょう。</p>
+</details>
+</article>
+<article class="tool">
+<p class="tag">表示を変える技術 ／ PC向け</p>
+<h3>CSS改変って、何ができる？</h3>
+<p>文字の大きさ・余白・配色など、自分のブラウザでの見え方を変える方法です。<strong>空席や予約権限そのものは変わりません。</strong>ユーザーCSSを管理する「Stylus」は、Chrome・Firefox・Chromium系ブラウザ向けに公開されています。</p>
+<p><a href="https://github.com/openstyles/stylus" rel="noreferrer">Stylusの公式案内・配布先</a></p>
+<p class="small">花博用のCSS設定を検証済みとして配布するものではありません。iPhoneのSafari向けツールではありません。重要な注意書きや操作ボタンを隠す設定、出所不明のCSSは避け、対象サイトを限定してください。</p>
+</article>
+<article class="tool">
+<p class="tag">追加インストールなし ／ ブラウザ標準機能</p>
+<h3>まずは「ページ内検索」と「拡大」</h3>
+<p>PCは <kbd>Ctrl</kbd>＋<kbd>F</kbd>（Macは <kbd>⌘</kbd>＋<kbd>F</kbd>）で、表示中の案内から「予約」「変更」などを探せます。iPhoneのSafariはページメニューの「ページ内を検索」を使えます。文字が小さければ、ブラウザの拡大・文字サイズ設定も便利です。</p>
+<p class="small">まだ読み込まれていない一覧や別ページまでは検索できません。予約画面の操作ボタンを見やすくしたいときは、まず拡大から試しましょう。</p>
+</article>
+<article class="tool">
+<p class="tag">公式 ／ 来場準備</p>
+<h3>入場と交通の予約を、取り違えない</h3>
+<p>公式案内では、入場の来場日時予約と、シャトルバス・駐車場の予約は別の手続きです。チケットを買った後も、移動手段の予約を確認しておくと安心です。</p>
+<ul class="links">
+<li><a href="https://expo2027yokohama.or.jp/tickets-index/" rel="noreferrer">チケット制度・購入と予約の案内</a></li>
+<li><a href="https://ticket.expo2027yokohama.or.jp/" rel="noreferrer">公式チケット・来場日時予約サイト</a></li>
+<li><a href="https://expo2027yokohama.or.jp/access/" rel="noreferrer">交通アクセスと予約条件</a></li>
+<li><a href="https://cs.shuttle-bus.expo2027yokohama.or.jp/" rel="noreferrer">公式シャトルバス予約</a> ／ <a href="https://parking-reserve.expo2027yokohama.or.jp/" rel="noreferrer">公式駐車場予約</a></li>
+</ul>
+<p class="small">リンク先では登録・個人情報入力が必要になる場合があります。この休憩所が入力情報を受け取ることはありません。受付状況や条件はリンク先の最新案内を確認してください。</p>
+</article>
+<article class="tool">
+<p class="tag">公式 ／ PDFを手元に</p>
+<h3>会場案内を、電波のあるうちに保存</h3>
+<p>公式パンフレットは、会場の全体像や見どころをつかむ参考になります。PDFをスマホの「ファイル」などへ保存しておけば、通信しにくい場所でも読めます。</p>
+<p><a href="https://expo2027yokohama.or.jp/assets/docs/about/promotionmaterials/expo2027-brochure-20260915.pdf" rel="noreferrer">公式パンフレット（2026年9月15日版・PDF）</a></p>
+<p class="small">開催前の資料です。当日の動線・施設・運用は変わる可能性があります。予約QRコードを含む画像は、SNSなどへ公開しないようにしましょう。</p>
+</article>
+<details class="tool">
+<summary>参考資料：大阪万博で使われた予約補助ツール</summary>
+<p><a href="https://github.com/TomoTom0/Expo2025-Reservation-Helper" rel="noreferrer">Expo2025予約補助（TomoTom0）</a>には、検索結果の全件読み込み、空きあり絞り込み、一覧コピーなどが説明されています。<strong>大阪万博向けで、花博への対応は確認できません。</strong>作者は大阪万博の終了を案内しています。</p>
+<p>自動予約・繰り返し試行・API利用の機能も含まれ、作者はアカウント制限のリスクに言及しています。花博向けの推奨ツールとしては扱わず、画面を使いやすくする工夫の参考資料として紹介しています。</p>
+</details>
+<p class="small">非公式ツールは公式サイトの変更で動かなくなることがあります。このページではツールの実行・配布・空席監視は行っていません。出所と対象サイトを確かめ、不要になった拡張機能は無効にしてください。</p>
+</section>
 <section id="official">
-<h2><span class="number">03</span>そろそろ、公式へ</h2>
+<h2><span class="number">04</span>そろそろ、公式へ</h2>
 <p>ひと休みしたら、最新のお知らせは公式サイトで。</p>
 <ul class="links"><li><a href="https://expo2027yokohama.or.jp/" rel="noreferrer">GREEN×EXPO 2027 公式サイト</a></li></ul>
 <p class="small">このサイトでは予約受付・空席確認はできません。開催情報、チケット、予約方法は公式の案内をご確認ください。</p>
